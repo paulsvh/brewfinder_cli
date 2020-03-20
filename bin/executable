@@ -1,3 +1,6 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/brewfinder_cli'
+
+
+BrewfinderCli::CLI.new.call
