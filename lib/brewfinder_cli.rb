@@ -1,4 +1,4 @@
-require "brewfinder_cli/version"
+require_relative "./brewfinder_cli/version"
 
 module BrewfinderCli
   class Error < StandardError; end
