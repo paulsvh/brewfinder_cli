@@ -1,5 +1,5 @@
 class BrewfinderCli::CLI 
-  
+  @@list = []
   def call
     puts "Welcome thirsty friend!" 
     sleep(1)
@@ -36,11 +36,10 @@ class BrewfinderCli::CLI
   def brewery_list
     API.get_breweries
     Brewery.all.shift
-    list = []
-    list << Brewery.all.each.with_index(1) do |brewery, index|     
+    @@list << Brewery.all.each.with_index(1) do |brewery, index|     
      puts "#{index}. #{brewery.name}"
      end
-     list
+     @@list
 
     puts "If you'd like more information on a brewery, enter it's number! If you'd like to exit, enter exit."
     input = gets.strip
@@ -51,30 +50,25 @@ class BrewfinderCli::CLI
     end
   end
   
-  def selected_brewery(brewery)
-    
+  def selected_brewery(brewery) 
+  #Need to update to only puts if data exists
+  #Need to fix "another" so the list updates with new/original index numbers
+      
     selection = Brewery.all[brewery -1]
       puts "#{selection.name}"
-      if selection.brewery_type
-        puts "Brewery Type: #{selection.brewery_type}"
-      if selection.street  
-      puts "Location: #{selection.street}"
-      if selection.phone
+      puts "Brewery Type: #{selection.brewery_type}"      
+      puts "Location: #{selection.street}"      
       puts "Phone # #{selection.phone}"
-      if selection.website_url
       puts "#{selection.website_url}"
       puts "To search for another brewery, enter 'another'. To exit, enter 'exit'."
       input = gets.strip
       if input == 'another'
+        @@list.clear()
         brewery_list
       elsif input == 'exit'
         goodbye
       else
         invalid
       end
-  end
-
-  
-
-  
+  end  
 end
