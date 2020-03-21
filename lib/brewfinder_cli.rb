@@ -1,6 +1,6 @@
 #ENVIRONMENT FILE, REQUIRE ALL NECESSARY FILES AND RELATIVES HERE
-require 'pry'
-require_relative "./brewfinder_cli/version"
-require_relative '../lib/cli'
-require_relative '../lib/brewery'
-require_relative '../lib/api'
+
+require_relative "../lib/brewfinder_cli/version.rb"
+require_relative '../lib/cli.rb'
+require_relative '../lib/brewery.rb'
+require_relative '../lib/api.rb'
