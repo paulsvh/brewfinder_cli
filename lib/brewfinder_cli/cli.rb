@@ -40,7 +40,6 @@ class BrewfinderCli::CLI
      puts "#{index}. #{brewery.name}"
      end
      @@list
-
     puts "If you'd like more information on a brewery, enter it's number! If you'd like to exit, enter exit."
     input = gets.strip
     if input == "exit"
@@ -53,7 +52,7 @@ class BrewfinderCli::CLI
   def selected_brewery(brewery) 
   #Need to update to only puts if data exists
   #Need to fix "another" so the list updates with new/original index numbers
-      
+
     selection = Brewery.all[brewery -1]
       puts "#{selection.name}"
       puts "Brewery Type: #{selection.brewery_type}"      
@@ -63,12 +62,11 @@ class BrewfinderCli::CLI
       puts "To search for another brewery, enter 'another'. To exit, enter 'exit'."
       input = gets.strip
       if input == 'another'
-        @@list.clear()
-        brewery_list
-      elsif input == 'exit'
-        goodbye
-      else
+        puts @@list
+      elsif input == "exit"
+         goodbye
+      else 
         invalid
-      end
-  end  
-end
+    end
+  end
+end    

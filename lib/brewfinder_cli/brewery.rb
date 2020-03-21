@@ -5,7 +5,7 @@ class Brewery
 
    def initialize(attributes)
    	attributes.each do |k, v|
-   		self.send("#{k}=", v) if self.respond_to?("#{k}=")
+   		self.send("#{k}=", v) #if self.respond_to?("#{k}=")
    	end
    	savepoint
    end
