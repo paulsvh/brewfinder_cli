@@ -13,8 +13,9 @@ class BrewfinderCli::CLI
   def menu
     user_input = gets.strip
     if user_input == "view"
-      brewery_list
-      menu      
+      Brewery.make_list
+      puts Brewery.list
+      find_by_number
     elsif user_input == "exit"
       goodbye
     else
@@ -33,40 +34,58 @@ class BrewfinderCli::CLI
     exit
   end
 
-  def brewery_list
-    API.get_breweries
-    Brewery.all.shift
-    @@list << Brewery.all.each.with_index(1) do |brewery, index|     
-     puts "#{index}. #{brewery.name}"
-     end
-     @@list
+  def find_by_number
     puts "If you'd like more information on a brewery, enter it's number! If you'd like to exit, enter exit."
     input = gets.strip
     if input == "exit"
       goodbye
     else
-      selected_brewery(input.to_i)
+      input_number = input.to_i
+      if input_number >=24 || input_number <1
+        puts "Error, Invalid number. Please try again!"
+        sleep(1)
+        puts Brewery.list
+        find_by_number
+      else 
+        selected_brewery(input_number)
+      end
     end
-  end
-  
-  def selected_brewery(brewery) 
-  #Need to update to only puts if data exists
-  #Need to fix "another" so the list updates with new/original index numbers
+   end
 
+  def selected_brewery(brewery) 
     selection = Brewery.all[brewery -1]
-      puts "#{selection.name}"
-      puts "Brewery Type: #{selection.brewery_type}"      
-      puts "Location: #{selection.street}"      
-      puts "Phone # #{selection.phone}"
-      puts "#{selection.website_url}"
-      puts "To search for another brewery, enter 'another'. To exit, enter 'exit'."
-      input = gets.strip
+    puts "#{selection.name}"
+      if selection.brewery_type != ""
+        puts "Brewery Type: #{selection.brewery_type}"
+      else
+        puts "Brewery Type: Unknown"  
+      end    
+      if selection.street != ""
+        puts "Location: #{selection.street}"
+      else
+        puts "Location: Unknown"
+      end       
+      if selection.phone != ""
+        puts "Phone #: #{selection.phone}" 
+      else
+        puts "Phone #: Unknown"
+      end
+      if selection.website_url != ""
+        puts "Website: #{selection.website_url}"
+      else
+        puts "Website: Unknown"
+      end
+    sleep(1)
+    puts "To search for another brewery, enter 'another'. To exit, enter 'exit'."
+    input = gets.strip
       if input == 'another'
-        puts @@list
+        puts Brewery.list
+        find_by_number
       elsif input == "exit"
-         goodbye
+        goodbye
       else 
         invalid
-    end
+      end
   end
-end    
+end
+
