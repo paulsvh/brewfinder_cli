@@ -6,19 +6,7 @@ TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'brewfinder_cli'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install brewfinder_cli
+AS OF V 1.0, THERE IS NO GEM PUBLISHED FOR DOWNLOAD OR USE. TO ACCESS THIS PROJECT PLEASE VISIT https://github.com/paulsvh/brewfinder_cli
 
 ## Usage
 
