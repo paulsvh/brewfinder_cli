@@ -1,8 +1,8 @@
 # BrewfinderCli
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/brewfinder_cli`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome! This gem will allow you to view a list of all breweries in Los Angeles and get information on any specific one.
 
-TODO: Delete this and the text above, and describe your gem
+In the future it will allow you to input any city, and return a list of all breweries in that city, allowing you to get info on any specific brewery in any city!
 
 ## Installation
 
