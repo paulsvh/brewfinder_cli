@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Follow on-screen prompts to find info on breweries in Los Angeles!
 
 ## Development
 
