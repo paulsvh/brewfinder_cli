@@ -3,7 +3,7 @@ class BrewfinderCli::CLI
   def call
     puts "Welcome thirsty friend!" 
     sleep(1)
-    puts "To view breweries on Los Angeles, enter 'view'"
+    puts "To view breweries in Los Angeles, enter 'view'"
     sleep (1)
     puts "To leave the app, input 'exit'" 
     sleep (1)

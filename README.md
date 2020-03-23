@@ -10,6 +10,9 @@ AS OF V 1.0, THERE IS NO GEM PUBLISHED FOR DOWNLOAD OR USE. TO ACCESS THIS PROJE
 
 ## Usage
 
+Fork or clone this github repo and direct to it in your command line of choice.
+cd into the bin folder.
+Enter, without the quotes, "ruby executable" to run the executable file using ruby.
 Follow on-screen prompts to find info on breweries in Los Angeles!
 
 ## Development
