@@ -11,7 +11,7 @@ class BrewfinderCli::CLI
   end
     
   def menu
-    user_input = gets.strip
+    user_input = gets.strip.downcase
     if user_input == "view"
       Brewery.make_list
       puts Brewery.list
@@ -36,7 +36,7 @@ class BrewfinderCli::CLI
 
   def find_by_number
     puts "If you'd like more information on a brewery, enter it's number! If you'd like to exit, enter exit."
-    input = gets.strip
+    input = gets.strip.downcase
     if input == "exit"
       goodbye
     else
@@ -77,7 +77,7 @@ class BrewfinderCli::CLI
       end
     sleep(1)
     puts "To search for another brewery, enter 'another'. To exit, enter 'exit'."
-    input = gets.strip
+    input = gets.strip.downcase
       if input == 'another'
         puts Brewery.list
         find_by_number
