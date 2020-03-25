@@ -89,3 +89,4 @@ class BrewfinderCli::CLI
   end
 end
 
+#wrap up!
